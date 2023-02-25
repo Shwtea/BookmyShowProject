@@ -73,7 +73,7 @@ authRouter.post("/tokenIsValid", async(req,res)=>{
 // get user data
 
 authRouter.get("/", auth, async (req, res) => {
-  onsole.log(" auth request");
+  console.log(" auth request");
   const user = await User.findById(req.user);
   res.json({ ...user._doc, token: req.token });
 });
